@@ -1,7 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This R script contains two functions,the first one stores a Matrix
+## and its inverse and the second one calculates the inverse matrix
 
-## Write a short comment describing this function
+## This function creates a list that can store a matrix(set), return 
+## the stored matrix(get), store the inverse of aforementioned 
+## matrix(setinverse), and return the inverse matrix (getinverse)
+
 
 makeCacheMatrix <- function(x = matrix()) {
 	invrs<-NULL
@@ -18,10 +21,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function takes the list created by the previous function
+## and calculates the inverse of stored matrix and puts it in the list
+## again. If the inverse is already calculated, it will not calculate it again
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+       
 	invrs<-x$getinverse()
 	if(!is.null(invrs)){
 		message("getting cached matrix")
